@@ -12,9 +12,9 @@ namespace Employee_Wage
         {
             Console.WriteLine("*****************Welcome to EmployeeWage Computation*******************\n");
             int fulltime = 1;  
-            Random random = new Random();  // random is a method 
-            int empChake = random.Next(0, 2);  // it print 0,1
-            if (empChake == fulltime)
+            Random random = new Random();   // Creating object of Random class
+            int empChake = random.Next(0, 2);  //  Generating random number 0 or 1
+            if (empChake == fulltime)  //Checking that employee is present or not
             {
                 Console.WriteLine ("Employee is present"); // print 1
             }
