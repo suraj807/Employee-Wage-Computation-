@@ -11,17 +11,25 @@ namespace Employee_Wage
         static void Main(string[] args)
         {
             Console.WriteLine("*****************Welcome to EmployeeWage Computation*******************\n");
-            int fulltime = 1;  
-            Random random = new Random();   // Creating object of Random class
-            int empChake = random.Next(0, 2);  //  Generating random number 0 or 1
-            if (empChake == fulltime)  //Checking that employee is present or not
+             int isPresent = 1;
+             int wagePerHour = 20;
+             int empWorkHour = 0;
+             int empDailyWage = 0;
+             Random random = new Random(); // Creating object of Random class
+            int check = random.Next(0, 2); // Generating random number 0 or 1
+            if (check == isPresent) // Checking that employee is present or not
             {
-                Console.WriteLine ("Employee is present"); // print 1
+                Console.WriteLine("Employee is Present");
+                empWorkHour = 8;
             }
             else
             {
-                Console.WriteLine("Employee is absent");    // print 0
+                Console.WriteLine("Employee is Absent");
+                empWorkHour = 0;
             }
+            empDailyWage = empWorkHour * wagePerHour; // Calculating Daily Wage of Employee
+            Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
+            Console.ReadLine();
 
 
         }
