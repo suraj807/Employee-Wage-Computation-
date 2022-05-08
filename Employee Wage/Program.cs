@@ -13,7 +13,7 @@ namespace Employee_Wage
             Console.WriteLine("*****************Welcome to EmployeeWage Computation*******************\n");
             const int isFullTime = 1;
             const int isPartTime = 2;
-             int wagePerHour = 20;
+            int wagePerHour = 20;
             int numofworkdays = 20;
             int empWorkHour = 0;
             int empDailyWage = 0;
@@ -43,13 +43,12 @@ namespace Employee_Wage
                 empDailyWage = empWorkHour * wagePerHour; // Calculating Daily Wage of Employee
                 totalempwage += empDailyWage; // Adding Daily Wage to Total Wage
                 Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
-                
+
             }
-            Console.WriteLine("total  emp Wage :" +totalempwage);
+            Console.WriteLine("total  emp Wage :" + totalempwage);
 
             Console.ReadLine();
         }
     }
 }
 
- 
