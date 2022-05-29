@@ -6,13 +6,24 @@ using System.Threading.Tasks;
 
 namespace Employee_Wage
 {
-    internal class Program
+    internal class EmpWageBuilder
     {
+        //constant variables
         const int IS_FULL_TIME = 1;
         const int IS_PART_TIME = 2;
-        public static void ComputeWage(string companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours) //Creating a class method for Wage Computation with parameters
+        //variables
+        private string companyName;
+        private int wagePerHour, maxWorkingDays, maxWorkingHours, totalMonthWage;
+        public EmpWageBuilder(string companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours) // EmpWageBuilder class constructor with arguments
         {
-            int totalMonthWage = 0, empWorkHour = 0, empDailyWage = 0, empTotalHour = 0, empTotalWorkDays = 0;
+            this.companyName = companyName;
+            this.wagePerHour = wagePerHour;
+            this.maxWorkingDays = maxWorkingDays;
+            this.maxWorkingHours = maxWorkingHours;
+        }
+        public void ComputeWage() //Creating a class method for Wage Computation with parameters
+        {
+            int empWorkHour = 0, empDailyWage = 0, empTotalHour = 0, empTotalWorkDays = 0;
             Random random = new Random(); // Creating object of Random class
             while (empTotalHour <= maxWorkingHours && empTotalWorkDays <= maxWorkingDays) // Checking that Employee total work hours should be less than or equal to 100 or Employee working days should be Less or equl to 20 
             {
@@ -52,18 +63,9 @@ namespace Employee_Wage
                 empTotalWorkDays -= 1;
             }
             Console.WriteLine("\n\nCompany Name : " + companyName);
-            Console.WriteLine($"\nEmployee total working days   : {empTotalWorkDays}");
-            Console.WriteLine($"Employee total working hours  : {empTotalHour}\n");
-            Console.WriteLine($"Employee Total Month Wage : {totalMonthWage}\n");
-        }
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
-            ComputeWage("Bridgelabz", 20, 20, 100);
-            ComputeWage("Infosys", 40, 20, 100);
-            Console.ReadLine();
+            Console.WriteLine($"\nEmployee total working days for {companyName} company is : {empTotalWorkDays}");
+            Console.WriteLine($"Employee total working hours for {companyName} company is : {empTotalHour}\n");
+            Console.WriteLine($"Employee Total Month Wage for {companyName} company is : {totalMonthWage}\n");
         }
     }
 }
-
- 
