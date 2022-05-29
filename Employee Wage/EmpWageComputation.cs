@@ -11,10 +11,10 @@ namespace Employee_Wage
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
-            EmpWageBuilder BridgeLabz = new EmpWageBuilder("Bridgelabz", 20, 20, 100);
-            EmpWageBuilder TCS = new EmpWageBuilder("TCS", 40, 25, 100);
-            BridgeLabz.ComputeWage();
-            TCS.ComputeWage();
+            EmpWageBuilder empWageBuilder = new EmpWageBuilder();
+            empWageBuilder.AddCompany("Bridgelabz", 20, 20, 100);
+            empWageBuilder.AddCompany("TCS", 40, 25, 100);
+            empWageBuilder.IterateOverListOfCompany();
             Console.ReadLine();
         }
     }
